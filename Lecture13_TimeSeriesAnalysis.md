@@ -111,3 +111,9 @@ Autocorrelation can be tested at as many lags as we want, depending on the lengt
 - If you get far enough away from each other, in terms of correlation, you can start to consider those values as independent from each other.
 
 ### White Noise ###
+
+| ![x](images/whitenoise.png) |
+| :-: |
+| Once rid of all signal, what you have left is a sort of random variable, like the bottom left, and you can directly sample from it and plot the eftover time series process (bottom right) |
+
+ 
