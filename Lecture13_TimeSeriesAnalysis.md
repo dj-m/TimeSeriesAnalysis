@@ -7,6 +7,13 @@ Time Series has _some things_ in common with probability & regression
 - Mean & Standard Deviation
   - The mean and/or variance (standard deviations) change through time series processes despite the parts being described, in many cases, through randomized variable with statistical moments.
   
-However, if you sampled/pulled from a time series distribution, would you be able to plot out the data points in a similar fashion to the image on the left, below:
+If you sampled/pulled from a time series distribution, would you be able to plot out the data points in a similar fashion to the image on the left, below:
 
 ![x](/images/timeseries_distribution.png)
+
+The answer is **no**
+- If the value of x(t) depends in any significant way on the value of x(t-1).
+  - These a hints of what's called "memory" in a time series. 
+- Trends tend to persist in a time series, but overall there is no trend.
+  - Another words for this is **autocorrelation**
+  
