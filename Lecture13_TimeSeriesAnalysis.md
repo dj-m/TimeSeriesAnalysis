@@ -1,5 +1,5 @@
 # Lecture 13: Time Series Analysis #
-Notes from Jordan Kern's [video](https://www.youtube.com/watch?v=Prpu_U5tKkE)
+Notes from Jordan Kern's <a href = "https://www.youtube.com/watch?v=Prpu_U5tKkE" target = "_blank">video</a>
 
 Definition of Time Series: An _ordered_ sequence of values of a variable at equally spaced time intervals.
 
