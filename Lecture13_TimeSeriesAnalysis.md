@@ -61,7 +61,7 @@ Filters tha can be applied to time series data:
 | ![x](/images/detrended.png) |
 | :-: |
 | Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero. 
-
+<br>
 It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
 
 ### Differencing ###
@@ -74,4 +74,4 @@ If the mean, variance and autocorrelations of the original series are not consta
 
 | ![x](/images/differencing_1.png) |
 | :-: |
-| The points in the right plot are teh differences between two consecutive days of the left plot. |
+| The points in the right plot are the differences between two consecutive days of the left plot. |
