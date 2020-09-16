@@ -10,7 +10,7 @@ Time Series has _some things_ in common with probability & regression
   
 If you sampled/pulled from a time series distribution, would you be able to plot out the data points in a similar fashion to the image on the left, below:
 
-![x](/images/timeseries_distribution.png)
+- ![x](/images/timeseries_distribution.png)
 
 The answer is **no**
 - If the value of x(t) depends in any significant way on the value of x(t-1).
@@ -20,3 +20,4 @@ The answer is **no**
   
 - Regression
   - time series analysis is focused on identifying underlying trends and patterns, describing them mathematically, and ultimtely making a prediction or forecast about what will happen next.
+  - But where regression aims to quantify the specific impacts of of specific underlying independent variables (Y = b1x1 + b2x2 + b3x3 + bnxn), time series modeling allows for the replication of every element in the process by combinign them into **signals** (e.g. year-on-year growth in electrivity demand, etc.) and **noise** (random probabilistic processes).
