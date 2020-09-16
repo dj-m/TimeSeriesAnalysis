@@ -149,6 +149,6 @@ Smoothing allows you to more easily evaluate and describe the time series withou
 
 ## Resources ##
 
-- <a href = "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target = "_blank">Engineering Statistics Handbook</a>
-- <a href = "https://www.ltrr.arizona.edu/~dmeko/geos585a.html" target = "_blank">Course Materials</a>
+- <a href = "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target = "_blank">Engineering Statistics Handbook</a> from National Institute of Standards and Technology (NIST)
+- <a href = "https://www.ltrr.arizona.edu/~dmeko/geos585a.html" target = "_blank">Course Materials</a> for GEOS 585A, Applied Time Series Analysis (Laboratory of Tree-Ring Research, University of Arizona)
 - <a href = "http://people.duke.edu/~rnau/411diff.htm" target = "_blank">Stationarity & Differencing</a> section of Robert Nau's <a href = "http://people.duke.edu/~rnau/411home.htm" target = "_blank">Statistical Forecasting</a> notes (Fuqua School of Business, Duke University).
