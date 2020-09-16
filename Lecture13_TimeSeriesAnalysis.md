@@ -54,9 +54,9 @@ Filters tha can be applied to time series data:
 
 ### Non-stationarity ###
 
-![x](/images/nonstationarity.png)
-
-The standard deviation nor the seasonality is not changing just the mean (on an upward trend)
+|![x](/images/nonstationarity.png)|
+| --- |
+|The standard deviation nor the seasonality is not changing just the mean (on an upward trend)|
 
 ![x](/images/detrended.png)
 
@@ -66,3 +66,12 @@ It's clearly not white noise. The mean, centered around 0, can have it's residua
 
 ### Differencing ###
 
+If the series has a long-runnign trend and tends to revert to the trend line following a distrubance, it be possible to stationarize it by de-trending (e.g. by fitting a trend line and subtracting it out prior to fitting a model). Such a series is said to be **trend-stationary**.
+
+However, sometimes even de-trending is not sufficient to make the series stationary. In this scenario, it may ne necessary to transform it into a series of period-to-period and/or season-to-season **differences**.
+
+If the mean, variance and autocorrelations of the original series are not constant in time, even after detrending, perhaps statistics of the _changes_ in the series between periods or between seasons _will_ be constant. Such a series is said to be ** difference-stationary**.
+
+![x](/images/differencing_1.png)
+
+The points in the right plot are teh differences between two consecutive days of the left plot.
