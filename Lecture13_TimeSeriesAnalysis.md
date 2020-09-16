@@ -22,9 +22,9 @@ The answer is **no**
   - time series analysis is focused on identifying underlying trends and patterns, describing them mathematically, and ultimtely making a prediction or forecast about what will happen next.
   - But where regression aims to quantify the specific impacts of of specific underlying independent variables (Y = b1x1 + b2x2 + b3x3 ...), time series modeling allows for the replication of every element in the process by combining them into **signals** (e.g. year-on-year growth in electrivity demand, etc.) and **noise** (random probabilistic processes) which adds some level of uncertainty.
 
- ![x](/images/signal_noise.png)
-  
-  - In the bottom plot, you see some indication of a trend/signal, but with the added noise or uncertainty around it.
+| ![x](/images/signal_noise.png) |
+| :-: |
+| In the bottom plot, you see some indication of a trend/signal, but with the added noise or uncertainty around it. |
   
 Common terms describing the nature of both signal **and** noise of a time series process:
 
@@ -54,15 +54,15 @@ Filters tha can be applied to time series data:
 
 ### Non-stationarity ###
 
-|![x](/images/nonstationarity.png)|
+| ![x](/images/nonstationarity.png) |
 | :-: |
-|The standard deviation nor the seasonality is not changing just the mean (on an upward trend)|
+| The standard deviation nor the seasonality is changing just the mean (on an upward trend) |
 
-![x](/images/detrended.png)
+| ![x](/images/detrended.png) |
+| :-: |
+| Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero. 
 
-Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero. 
-
-It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another.
+It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
 
 ### Differencing ###
 
@@ -72,6 +72,6 @@ However, sometimes even de-trending is not sufficient to make the series station
 
 If the mean, variance and autocorrelations of the original series are not constant in time, even after detrending, perhaps statistics of the _changes_ in the series between periods or between seasons _will_ be constant. Such a series is said to be ** difference-stationary**.
 
-![x](/images/differencing_1.png)
-
-The points in the right plot are teh differences between two consecutive days of the left plot.
+| ![x](/images/differencing_1.png) |
+| :-: |
+| The points in the right plot are teh differences between two consecutive days of the left plot. |
