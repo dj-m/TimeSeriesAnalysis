@@ -57,7 +57,7 @@ Filters tha can be applied to time series data:
 | ![x](/images/nonstationarity.png) |
 | :-: |
 | The standard deviation nor the seasonality is changing just the mean (on an upward trend) |
-
+| :-: |
 | ![x](/images/detrended.png) |
 | :-: |
 | Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero.<br><br>It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
@@ -88,5 +88,26 @@ If seasonality (periodic fluctuations) is present, it must be incorporated into 
 
 | ![x](/images/seasonality.png) |
 | :-: |
-| Here, we're starting with residuals, centered around 0, and trying to remove the seasonality and understand how CO2 concentrations change over time if we take out year-to-year trends.<br><br>In the bottom, what we have is something that looks like a random walk. It kind of looks like white noise but there's some memory left n the system, therefore it can't be replicated by sampling random values and doesn't represent a random process. |
+| Here, we're starting with residuals, centered around 0, and trying to remove the seasonality and understand how CO2 concentrations change over time if we take out year-to-year trends.<br><br>In the bottom, what we have is something that looks like a random walk. It kind of looks like white noise but there's some memory left in the system (values stay above 0 for a while, then below 0 for a while), therefore it can't be replicated by sampling random values and doesn't represent a random process. |
 
+### Autocorrelation ###
+
+One of the fundamental differences between many time series and a random sampling from a single, known distribution, is that time series often have 'memory' i.e. values in one time period influence values in subsequent time periods.
+
+We quantify this memory as **autocorrelation**
+
+The autocorrelation function can be used for the following two purposes:
+- To detect non-randomness in data
+- To identify an appropriate time series model if the data are not random
+
+| ![x](/images/autocorrelation.png) |
+| :-: |
+| The formula for correlation between random values in a distribution and autocorrelation is very similar, except it's looking at the values in different time-shifts. Here you're taking the sum of Y, at time period i, minus the mean of Y, times the value of Y, at time period i plus k minus the mean of Y... then dividing by Yi minus the mean of Y, squared. |
+
+If we have a strong correlation between every 10 time periods, then that gives us _periodicity_ or when certain values will happen again or about the same.
+
+Autocorrelation can be tested at as many lags as we want, depending on the length of the time series. 
+- Then we can plot autocorrelation as a function of lag. This tests how much memory, or correlation is exhibited between different points, changes over how far apart they are, in time. 
+- If you get far enough away from each other, in terms of correlation, you can start to consider those values as independent from each other.
+
+### White Noise ###
