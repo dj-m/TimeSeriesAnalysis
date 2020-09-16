@@ -114,6 +114,41 @@ Autocorrelation can be tested at as many lags as we want, depending on the lengt
 
 | ![x](images/whitenoise.png) |
 | :-: |
-| Once rid of all signal, what you have left is a sort of random variable, like the bottom left, and you can directly sample from it and plot the eftover time series process (bottom right) |
+| Once rid of all signal, what you have left is a sort of random variable, like the bottom left, and you can directly sample from it and plot the leftover time series process (bottom right) |
 
- 
+### Smoothing ###
+
+It removes the importance of high-frequency spectral components. So, noise, basically.
+
+Electrical engineers call this a _low-pass filter_ because the low frequency variations are allowed to **pass through** the filter. In a low-pass filter, the low frequency (long-period) waves are barely affected by smoothing.
+
+
+A _statistical filter_ or digital filter, is a **series of weights** that when cumulatively multiplied by consecutive values of a time series give you a filtered series. The series of weights is sometimes called the filtering function, or simply the filter.
+
+| ![x](statisticalfilter.png) |
+| :-: |
+| In this example, the filtered values represents the summation of the weight (Filter) * values in the Time Series column. The value for the Tear 3 row is (0.25 * 17) + (0.5 * 10) + (0.25 * 22)  = 14.75 |
+
+Smoothing filters can be applied in different ways:
+
+- Linear decay takes a weight that changes as it progresses through the time series in a linear fashion.
+- Moving average takes a weight that will change based on the mean values it comes across as it progresses through the time searies.
+
+| ![x](smoothing.png) |
+| :-: |
+| As your filter is being applied, you're often taking in several values and outputting just one which means that at the beginning, you have less values making up the single value you u=output, and at the end as well. Whether you modify or get rid of that data depends on what problems you're trying to answer. |
+
+**The goal of smoothing is to bring out the signal and get rid of some of the noise.** You want to retain high amplitude events that don't occur very often and get rid of events that occur very frequently.
+
+| ![x](frequency.png) |
+| :-: |
+| What we're left with, looking at the _Filtered_ line, are the high amplitude, low frequency events that really are important for driving the system. Some information is lost though, as information above 0.1 is basically removed from the plot. |
+
+Smoothing allows you to more easily evaluate and describe the time series without giving too much importance to the more random events that happen around the signal that we care about.
+
+
+## Resources ##
+
+<a href = "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target = "_blank">Engineering Statistics Handbook</a>
+<a href = "https://www.ltrr.arizona.edu/~dmeko/geos585a.html" target = "_blank">Course Materials</a>
+<a href = "http://people.duke.edu/~rnau/411diff.htm" target = "_blank">Stationarity & Differencing</a> section of Robert Nau's <a href = "http://people.duke.edu/~rnau/411home.htm" target = "_blank">Statistical Forecasting</a> notes (Fuqua School of Business, Duke University).
