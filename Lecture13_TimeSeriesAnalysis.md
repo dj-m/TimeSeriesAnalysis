@@ -10,7 +10,7 @@ Definition of Time Series: An _ordered_ sequence of values of a variable at equa
   
 If you sampled/pulled from a time series distribution, would you be able to plot out the data points in a similar fashion to the image on the left, below:
 
- ![x](/images/timeseries_distribution.png)
+ ![x](images/timeseries_distribution.png)
 
 The answer is **no**
 - If the value of x(t) depends in any significant way on the value of x(t-1).
@@ -22,7 +22,7 @@ The answer is **no**
   - time series analysis is focused on identifying underlying trends and patterns, describing them mathematically, and ultimtely making a prediction or forecast about what will happen next.
   - But where regression aims to quantify the specific impacts of of specific underlying independent variables (Y = b1x1 + b2x2 + b3x3 ...), time series modeling allows for the replication of every element in the process by combining them into **signals** (e.g. year-on-year growth in electrivity demand, etc.) and **noise** (random probabilistic processes) which adds some level of uncertainty.
 
-| ![x](/images/signal_noise.png) |
+| ![x](images/signal_noise.png) |
 | :-: |
 | In the bottom plot, you see some indication of a trend/signal, but with the added noise or uncertainty around it. |
   
@@ -54,11 +54,11 @@ Filters tha can be applied to time series data:
 
 ### Non-stationarity ###
 
-| ![x](/images/nonstationarity.png) |
+| ![x](images/nonstationarity.png) |
 | :-: |
 | The standard deviation nor the seasonality is changing just the mean (on an upward trend) |
 | :-: |
-| ![x](/images/detrended.png) |
+| ![x](images/detrended.png) |
 | :-: |
 | Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero.<br><br>It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
 
@@ -70,13 +70,13 @@ However, sometimes even de-trending is not sufficient to make the series station
 
 If the mean, variance and autocorrelations of the original series are not constant in time, even after detrending, perhaps statistics of the _changes_ in the series between periods or between seasons _will_ be constant. Such a series is said to be ** difference-stationary**.
 
-| ![x](/images/differencing_1.png) |
+| ![x](images/differencing_1.png) |
 | :-: |
 | The points in the right plot are the differences between two consecutive days of the left plot. What we get is that the mean is roughly 0 and has less nonstationarity. The variance or standard deviation for the right plot is not stationary though. |
 
 If the first difference of Y is stationary and also _completely random_ (not autocorrelated), then Y is described by a **random walk model**: each value is a random step away from the previous value. 
 
-| ![x](/images/randomwalk.png) |
+| ![x](images/randomwalk.png) |
 | :-: |
 | We all start at 0 but each individual simulation, which is a different color, the evolution of the W value is a random value. There's memory in the system. The value that we get today is directly dependent on the value we got yesterday, but how we got from yesterday to today's value is a random value. |
 
@@ -86,7 +86,7 @@ If seasonality (periodic fluctuations) is present, it must be incorporated into 
 
 - One of the simplest ways is using box plots.
 
-| ![x](/images/seasonality.png) |
+| ![x](images/seasonality.png) |
 | :-: |
 | Here, we're starting with residuals, centered around 0, and trying to remove the seasonality and understand how CO2 concentrations change over time if we take out year-to-year trends.<br><br>In the bottom, what we have is something that looks like a random walk. It kind of looks like white noise but there's some memory left in the system (values stay above 0 for a while, then below 0 for a while), therefore it can't be replicated by sampling random values and doesn't represent a random process. |
 
@@ -100,7 +100,7 @@ The autocorrelation function can be used for the following two purposes:
 - To detect non-randomness in data
 - To identify an appropriate time series model if the data are not random
 
-| ![x](/images/autocorrelation.png) |
+| ![x](images/autocorrelation.png) |
 | :-: |
 | The formula for correlation between random values in a distribution and autocorrelation is very similar, except it's looking at the values in different time-shifts. Here you're taking the sum of Y, at time period i, minus the mean of Y, times the value of Y, at time period i plus k minus the mean of Y... then dividing by Yi minus the mean of Y, squared. |
 
@@ -125,7 +125,7 @@ Electrical engineers call this a _low-pass filter_ because the low frequency var
 
 A _statistical filter_ or digital filter, is a **series of weights** that when cumulatively multiplied by consecutive values of a time series give you a filtered series. The series of weights is sometimes called the filtering function, or simply the filter.
 
-| ![x](statisticalfilter.png) |
+| ![x](images/statisticalfilter.png) |
 | :-: |
 | In this example, the filtered values represents the summation of the weight (Filter) * values in the Time Series column. The value for the Tear 3 row is (0.25 * 17) + (0.5 * 10) + (0.25 * 22)  = 14.75 |
 
@@ -134,13 +134,13 @@ Smoothing filters can be applied in different ways:
 - Linear decay takes a weight that changes as it progresses through the time series in a linear fashion.
 - Moving average takes a weight that will change based on the mean values it comes across as it progresses through the time searies.
 
-| ![x](smoothing.png) |
+| ![x](images/smoothing.png) |
 | :-: |
 | As your filter is being applied, you're often taking in several values and outputting just one which means that at the beginning, you have less values making up the single value you u=output, and at the end as well. Whether you modify or get rid of that data depends on what problems you're trying to answer. |
 
 **The goal of smoothing is to bring out the signal and get rid of some of the noise.** You want to retain high amplitude events that don't occur very often and get rid of events that occur very frequently.
 
-| ![x](frequency.png) |
+| ![x](images/frequency.png) |
 | :-: |
 | What we're left with, looking at the _Filtered_ line, are the high amplitude, low frequency events that really are important for driving the system. Some information is lost though, as information above 0.1 is basically removed from the plot. |
 
@@ -149,6 +149,6 @@ Smoothing allows you to more easily evaluate and describe the time series withou
 
 ## Resources ##
 
-<a href = "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target = "_blank">Engineering Statistics Handbook</a>
-<a href = "https://www.ltrr.arizona.edu/~dmeko/geos585a.html" target = "_blank">Course Materials</a>
-<a href = "http://people.duke.edu/~rnau/411diff.htm" target = "_blank">Stationarity & Differencing</a> section of Robert Nau's <a href = "http://people.duke.edu/~rnau/411home.htm" target = "_blank">Statistical Forecasting</a> notes (Fuqua School of Business, Duke University).
+- <a href = "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm" target = "_blank">Engineering Statistics Handbook</a>
+- <a href = "https://www.ltrr.arizona.edu/~dmeko/geos585a.html" target = "_blank">Course Materials</a>
+- <a href = "http://people.duke.edu/~rnau/411diff.htm" target = "_blank">Stationarity & Differencing</a> section of Robert Nau's <a href = "http://people.duke.edu/~rnau/411home.htm" target = "_blank">Statistical Forecasting</a> notes (Fuqua School of Business, Duke University).
