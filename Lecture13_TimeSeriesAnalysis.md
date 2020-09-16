@@ -1,5 +1,5 @@
 # Lecture 13: Time Series Analysis #
-Notes from Jordan Kern's <a href = "https://www.youtube.com/watch?v=Prpu_U5tKkE" target = "_blank">video</a>
+Notes from Jordan Kern's <a href = "https://www.youtube.com/watch?v=Prpu_U5tKkE" target = "_blank">Lecture 13</a> video.
 
 Definition of Time Series: An _ordered_ sequence of values of a variable at equally spaced time intervals.
 
@@ -60,10 +60,7 @@ Filters tha can be applied to time series data:
 
 | ![x](/images/detrended.png) |
 | :-: |
-| Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero. 
-<br>
-<br>
-It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
+| Given a constant and time, we can estimate what the concetrations of CO2 may be. Given that model, we can subtract what the CO2 concentration is and we're left with a detrended CO2 data. Detrended in the sense of year to year. There's still a seasonality trend here, but the mean is centered around zero.<br><br>It's clearly not white noise. The mean, centered around 0, can have it's residuals described around a probaility distribution but, there's autocorrelation. The value of CO2 concentration from one month to the next is very closely related to one another. |
 
 ### Differencing ###
 
@@ -75,4 +72,21 @@ If the mean, variance and autocorrelations of the original series are not consta
 
 | ![x](/images/differencing_1.png) |
 | :-: |
-| The points in the right plot are the differences between two consecutive days of the left plot. |
+| The points in the right plot are the differences between two consecutive days of the left plot. What we get is that the mean is roughly 0 and has less nonstationarity. The variance or standard deviation for the right plot is not stationary though. |
+
+If the first difference of Y is stationary and also _completely random_ (not autocorrelated), then Y is described by a **random walk model**: each value is a random step away from the previous value. 
+
+| ![x](/images/randomwalk.png) |
+| :-: |
+| We all start at 0 but each individual simulation, which is a different color, the evolution of the W value is a random value. There's memory in the system. The value that we get today is directly dependent on the value we got yesterday, but how we got from yesterday to today's value is a random value. |
+
+### Seasonality ###
+
+If seasonality (periodic fluctuations) is present, it must be incorporated into a time series model. **How do we detect it?**
+
+- One of the simplest ways is using box plots.
+
+| ![x](/images/seasonality.png) |
+| :-: |
+| Here, we're starting with residuals, centered around 0, and trying to remove the seasonality and understand how CO2 concentrations change over time if we take out year-to-year trends.<br><br>In the bottom, what we have is something that looks like a random walk. It kind of looks like white noise but there's some memory left n the system, therefore it can't be replicated by sampling random values and doesn't represent a random process. |
+
