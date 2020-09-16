@@ -55,7 +55,7 @@ Filters tha can be applied to time series data:
 ### Non-stationarity ###
 
 |![x](/images/nonstationarity.png)|
-| --- |
+| :-: |
 |The standard deviation nor the seasonality is not changing just the mean (on an upward trend)|
 
 ![x](/images/detrended.png)
